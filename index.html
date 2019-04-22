@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+    />
+
+    <title>test</title>
+    <style>
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        font-weight: bold;
+        font-family: "Open Sans", sans-serif;
+      }
+      /* .container {
+        display: grid;
+        grid-column-gap: 0px;
+        grid-template-columns: auto auto auto;
+        padding: 20px;
+        width: 600px;
+        margin: 80px auto 0px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: red;
+      } */
+      .container {
+        width: 600px;
+        margin: 80px auto 0px;
+        border: 0.5px solid black;
+      }
+      .container::after {
+        clear: both;
+        content: "";
+        display: table;
+      }
+      /* .item {
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        padding: 0px;
+        font-size: 20px;
+        text-align: center;
+        width: 200px;
+      } */
+      .item {
+        border: 0.5px solid black;
+        width: 199px;
+        height: 44px;
+        line-height: 44px;
+        margin: 0px;
+        text-align: center;
+        float: left;
+      }
+      .container2 {
+        display: grid;
+        grid-column-gap: 0px;
+        grid-template-columns: auto auto auto;
+        padding: 20px;
+        width: 600px;
+        margin: 0px auto 0px;
+      }
+      .container2::after {
+        clear: both;
+        content: "";
+        display: table;
+      }
+
+      .item2 {
+        border: 0px solid rgba(0, 0, 0, 0.8);
+        padding: 0px;
+        font-size: 30px;
+        text-align: center;
+        line-height: 2.5vh;
+        width: 200px;
+      }
+
+      .font {
+        font-size: 20px;
+      }
+
+      .paragraph {
+        width: 600px;
+        margin: 0px auto 0px;
+        display: none;
+        font-size: 15px;
+      }
+
+      .hr {
+        margin: 0px auto 0px;
+        width: 50px;
+        position: fixed;
+        top: 28%;
+        left: 50%;
+        /* bring your own prefixes */
+        transform: translate(-50%, -50%);
+
+        /* background-color: darkgray; */
+      }
+      /* #grid-wrapper {
+        background-color: darkred;
+      } */
+
+      /* Desktops */
+      @media (max-width: 2000px) {
+        .accordion {
+          display: none;
+        }
+        .panel {
+          display: none;
+        }
+      }
+
+      /* Tablets */
+      @media (max-width: 991px) {
+      }
+
+      /* Phones */
+      @media (max-width: 736px) {
+        .container {
+          display: none;
+        }
+        .accordion-container {
+          width: 100%;
+          display: block;
+          width: 600px;
+          margin: 0px auto 0px;
+        }
+        .accordion {
+          display: block;
+          background-color: white;
+          color: black;
+          cursor: pointer;
+          padding: 18px;
+          width: 100%;
+          text-align: left;
+          border: none;
+          /* outline: solid; */
+          transition: 0.4s;
+          border-bottom-width: 1px; /* add a slight border to bottom of menus */
+          border-bottom-style: solid; /* solid line */
+          border-bottom-color: black; /* color of border */
+        }
+        .active,
+        .accordion:hover {
+          background-color: white;
+        }
+        .container2 {
+          width: 100%;
+        }
+
+        .accordion:after {
+          content: "\02795"; /* Unicode character for "plus" sign (+) */
+          font-size: 13px;
+          /* color: #777; */
+          float: right;
+          margin-left: 5px;
+        }
+
+        .active:after {
+          content: "\2796"; /* Unicode character for "minus" sign (-) */
+        }
+        .panel {
+          padding: 0 18px;
+          background-color: white;
+          display: none;
+          overflow: hidden;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="item" id="fit">Fit Guide</div>
+      <div class="item" id="care">Care</div>
+      <div class="item" id="material">Materials</div>
+    </div>
+    <div class="accordion-container">
+      <button class="accordion">Fit Guide</button>
+      <div class="panel"></div>
+
+      <button class="accordion">Care</button>
+      <div class="panel"></div>
+
+      <button class="accordion">Materials</button>
+      <div class="panel"></div>
+    </div>
+
+    <div class="container2">
+      <div class="item2">
+        50%<span class="font"><br />Cashmere</span>
+      </div>
+      <div class="item2">
+        46%<span class="font"><br />Wool </span>
+      </div>
+      <div class="item2">
+        4%<span class="font"><br />Modal</span>
+      </div>
+    </div>
+    <div class="hr">
+      <hr />
+    </div>
+    <div id="grid-wrapper">
+      <div class="paragraph" id="para_1">
+        <p>
+          Interdum sed, finibus in nibh. Praesent eros lectus, fermentum at enim
+          non, porta ultrices nisi. Aliquam odio libero, commodo id pulvinar
+          eget, gravida non turpis. In mi massa, placerat ut ex sed, mollis
+          imperdiet elit. Interdum et malesuada fames ac ante ipsum primis in
+          faucibus. Morbi ultrices scelerisque fermentum. Quisque luctus sapien
+          vitae dignissim ornare. Donec non lorem sagittis, condimentum augue
+          vel, suscipit nisl. Praesent blandit eu ligula eu dictum. Donec
+          faucibus purus in urna mollis, nec vulputate sem mollis. Orci varius
+          natoque penatibus et magnis dis parturient montes, nascetur ridiculus
+          mus. Aliquam vulputate dignissim libero, ut blandit massa ultrices et.
+          Fusce mattis luctus nibh. Donec rhoncus pretium lectus id sodales.
+        </p>
+      </div>
+      <div class="paragraph" id="para_2">
+        <p>
+          Interdum sed, finibus in nibh. Praesent eros lectus, fermentum at enim
+          non, porta ultrices nisi. Aliquam odio libero, commodo id pulvinar
+          eget, gravida non turpis. In mi massa, placerat ut ex sed, mollis
+          imperdiet elit. Interdum et malesuada fames ac ante ipsum primis in
+          faucibus.
+        </p>
+      </div>
+      <div class="paragraph" id="para_3">
+        <p>
+          Interdum sed, finibus in nibh. Praesent eros lectus, fermentum at enim
+          non, porta ultrices nisi. Aliquam odio libero, commodo id pulvinar
+          eget, gravida non turpis. In mi massa, faucibus.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      var boxes = document.getElementById("grid-wrapper");
+      console.log(boxes);
+
+      document.getElementById("fit").onclick = function() {
+        var b = document.getElementById("para_2");
+        b.style.display = "none";
+        var boxes = document.getElementById("para_1");
+        boxes.style.display = "block";
+        document.getElementById("fit").style.color = "white";
+        document.getElementById("fit").style.backgroundColor = "black";
+      };
+
+      document.getElementById("care").onclick = function() {
+        var b = document.getElementById("para_1");
+        b.style.display = "none";
+        var boxes = document.getElementById("para_2");
+        boxes.style.display = "block";
+      };
+
+      document.getElementById("material").onclick = function() {
+        var b = document.getElementById("para_1");
+        b.style.display = "none";
+        var boxes = document.getElementById("para_3");
+        boxes.style.display = "block";
+      };
+
+      var acc = document.getElementsByClassName("accordion");
+      var i;
+
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+          /* Toggle between adding and removing the "active" class,
+    to highlight the button that controls the panel */
+          this.classList.toggle("active");
+
+          /* Toggle between hiding and showing the active panel */
+          var panel = this.nextElementSibling;
+          if (panel.style.display === "block") {
+            panel.style.display = "none";
+          } else {
+            panel.style.display = "block";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
